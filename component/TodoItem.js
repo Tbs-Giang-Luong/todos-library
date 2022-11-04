@@ -6,7 +6,7 @@ function TodoItem({ todo, index,editIndex }) {
       <div class="view">
         <input
           class="toggle"
-          type="checkbox"
+          type="checkbox"sssssss
           ${todo.completed && "checked"}
           onchange="dispatch('toggle',${index})"
         />
@@ -14,7 +14,7 @@ function TodoItem({ todo, index,editIndex }) {
         <button class="destroy" onclick="dispatch('destroy',${index})"></button>
       </div>
       <input class="edit" value="${todo.title}" 
-      onkeyup = " event.keyCode === 13 && dispatch('endEdit',this.value.trim())"
+      onkeyup = " event.keyCode === 13 && dispatch('endEdit',this.value.trim())  || event.keyCode == 27 dispatch('cancelEdit') "
       onblur = " dispatch('endEdit',this.value.trim())"
       />
     </li>
